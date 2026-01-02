@@ -1,0 +1,160 @@
+.about-page {
+    min-height: 100vh;
+}
+
+.page-hero {
+    padding: 120px 0 60px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.content-right {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 96px 0;
+}
+
+.mission-card {
+    background: var(--bg-card);
+    padding: 80px 60px;
+    border: 1px solid var(--border-light);
+    text-align: center;
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Values Grid */
+.values-section {
+    padding: 96px 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.value-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    border-color: var(--brand-primary);
+    transform: translateY(-4px);
+}
+
+.value-icon {
+    color: var(--brand-primary);
+}
+
+/* Approach Section */
+.approach-section {
+    padding: 96px 0;
+    background: var(--bg-card);
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.approach-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.approach-item {
+    padding: 24px;
+    background: var(--bg-page);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.approach-item:hover {
+    border-color: var(--brand-primary);
+    transform: translateX(8px);
+}
+
+.approach-item h4 {
+    margin-bottom: 12px;
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--bg-page);
+    border-top: 1px solid var(--border-light);
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+
+    .content-grid,
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .mission-card {
+        padding: 60px 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-hero {
+        padding: 100px 0 40px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-card {
+        padding: 40px 24px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-buttons .btn-primary,
+    .cta-buttons .btn-secondary {
+        width: 100%;
+    }
+}
