@@ -32,7 +32,7 @@ const About = () => {
             {/* Hero Section */}
             <section className="page-hero space-top-120">
                 <div className="container">
-                    <h1 className="heading-1">ABOUT AERION EXCELLENCE</h1>
+                    <h1 className="heading-1">ABOUT AERION Gateway</h1>
                     <p className="body-large" style={{ marginTop: '32px', maxWidth: '800px' }}>
                         Professional sourcing and coordination partner supporting businesses across diverse product requirements.
                     </p>
@@ -48,7 +48,7 @@ const About = () => {
                         </div>
                         <div className="content-right">
                             <p className="body-large">
-                                Aerion Excellence is a professional sourcing and coordination partner supporting businesses
+                                Aerion Gateway is a professional sourcing and coordination partner supporting businesses
                                 across diverse product requirements. We specialize in supplier coordination, requirement alignment,
                                 and operational clarity — ensuring smooth execution without confusion.
                             </p>

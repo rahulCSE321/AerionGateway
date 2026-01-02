@@ -12,7 +12,7 @@ const Footer = () => {
                         <div className="footer-brand">
                             <div className="footer-logo">
                                 <span className="logo-text">AERION</span>
-                                <span className="logo-sub">Excellence</span>
+                                <span className="logo-sub">Gateway</span>
                             </div>
                             <p className="footer-tagline body-small">
                                 Reliable Sourcing • Clear Coordination • Professional Execution
