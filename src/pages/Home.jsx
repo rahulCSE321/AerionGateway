@@ -32,25 +32,28 @@ const Home = () => {
 
     const categories = [
         {
-            title: 'Lifestyle & Home Products',
-            image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&q=80'
+            title: 'Glass, Plastic & Household Utilities',
+            image: 'https://images.unsplash.com/photo-1541698321721-c083f55816da?w=800&q=80'
         },
         {
             title: 'Textile & Carpets',
             image: 'https://images.unsplash.com/photo-1542044801-30d3e45ae49a?w=800&q=80'
         },
         {
-            title: 'Packaging Solutions',
-            image: 'https://images.unsplash.com/photo-1617825295690-28ae56c56135?w=800&q=80'
-        },
-        {
-            title: 'Glass, Plastic & Household Utilities',
-            image: 'https://images.unsplash.com/photo-1541698321721-c083f55816da?w=800&q=80'
+            title: 'Lifestyle & Home Products',
+            image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&q=80'
         },
         {
             title: 'Customized Product Requests',
             image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?w=800&q=80'
-        }
+        },
+
+        {
+            title: 'Packaging Solutions',
+            image: 'https://images.unsplash.com/photo-1617825295690-28ae56c56135?w=800&q=80'
+        },
+
+
     ];
 
     const benefits = [
