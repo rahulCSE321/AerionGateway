@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import './ProductCategories.css';
 
@@ -62,6 +62,14 @@ const ProductCategories = () => {
         }
     ];
 
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const selectedCategory = searchParams.get('category');
+
+    const filteredCategories = selectedCategory
+        ? categories.filter(cat => cat.title === selectedCategory)
+        : categories;
+
     return (
         <div className="products-page">
             {/* Hero Section */}
@@ -71,6 +79,13 @@ const ProductCategories = () => {
                     <p className="body-large" style={{ marginTop: '32px', maxWidth: '800px' }}>
                         Our network spans multiple product segments, allowing flexible and reliable support.
                     </p>
+                    {selectedCategory && (
+                        <div style={{ marginTop: '24px' }}>
+                            <Link to="/products" className="btn-secondary">
+                                Show All Categories
+                            </Link>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -78,7 +93,7 @@ const ProductCategories = () => {
             <section className="section space-top-96 space-bottom-120">
                 <div className="container">
                     <div className="categories-list">
-                        {categories.map((category, index) => (
+                        {filteredCategories.map((category, index) => (
                             <div key={index} className="category-detail-card">
                                 <div className="category-detail-image">
                                     <img src={category.image} alt={category.title} />

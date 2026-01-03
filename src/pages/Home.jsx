@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
 import './Home.css';
 
 const Home = () => {
@@ -37,11 +44,11 @@ const Home = () => {
             image: 'https://images.unsplash.com/photo-1617825295690-28ae56c56135?w=800&q=80'
         },
         {
-            title: 'Glass, Plastic & Utilities',
+            title: 'Glass, Plastic & Household Utilities',
             image: 'https://images.unsplash.com/photo-1541698321721-c083f55816da?w=800&q=80'
         },
         {
-            title: 'Customized Products',
+            title: 'Customized Product Requests',
             image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?w=800&q=80'
         }
     ];
@@ -143,18 +150,28 @@ const Home = () => {
                         <h2 className="heading-2">PRODUCT CATEGORIES WE SUPPORT</h2>
                         <p className="body-large section-subtitle">Our network spans multiple product segments, allowing flexible and reliable support.</p>
                     </div>
-                    <div className="categories-grid">
-                        {categories.map((category, index) => (
-                            <div key={index} className="category-card">
-                                <div className="category-image-wrapper">
-                                    <img src={category.image} alt={category.title} className="category-image" />
-                                </div>
-                                <div className="category-content">
-                                    <h3 className="heading-4">{category.title}</h3>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+
+                    <Carousel opts={{ align: "start", loop: true }} className="w-full">
+                        <CarouselContent>
+                            {categories.map((category, index) => (
+                                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                                    <Link to={`/products?category=${encodeURIComponent(category.title)}`} className="block h-full">
+                                        <div className="category-card h-full">
+                                            <div className="category-image-wrapper">
+                                                <img src={category.image} alt={category.title} className="category-image" />
+                                            </div>
+                                            <div className="category-content">
+                                                <h3 className="heading-4">{category.title}</h3>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="hidden md:flex" />
+                        <CarouselNext className="hidden md:flex" />
+                    </Carousel>
+
                     <div className="section-cta" style={{ marginTop: '60px' }}>
                         <Link to="/products" className="btn-primary">
                             Explore All Categories <ArrowRight size={20} style={{ marginLeft: '8px' }} />

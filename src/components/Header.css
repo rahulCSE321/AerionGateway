@@ -87,11 +87,11 @@
 
 @media (max-width: 767px) {
     .nav {
-        position: fixed;
-        top: 80px;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
-        background: var(--bg-page);
+        background: rgba(26, 28, 27, 0.98);
         flex-direction: column;
         padding: 20px;
         gap: 0;
@@ -100,6 +100,9 @@
         opacity: 0;
         pointer-events: none;
         transition: transform 0.3s ease, opacity 0.3s ease;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        z-index: 999;
     }
 
     .nav.nav-open {

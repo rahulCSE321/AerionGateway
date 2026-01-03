@@ -127,7 +127,7 @@
     .content-grid,
     .approach-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 60px;
     }
 
     .mission-card {
@@ -137,7 +137,12 @@
 
 @media (max-width: 767px) {
     .page-hero {
-        padding: 100px 0 40px;
+        padding: 140px 0 60px;
+    }
+
+    .content-grid,
+    .approach-grid {
+        gap: 40px;
     }
 
     .values-grid {
@@ -151,6 +156,7 @@
     .cta-buttons {
         flex-direction: column;
         width: 100%;
+        gap: 16px;
     }
 
     .cta-buttons .btn-primary,

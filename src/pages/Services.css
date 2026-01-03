@@ -121,11 +121,12 @@
 /* Responsive Design */
 @media (max-width: 767px) {
     .page-hero {
-        padding: 100px 0 40px;
+        padding: 140px 0 60px;
     }
 
     .service-card {
         padding: 32px 24px;
+        gap: 24px;
     }
 
     .service-header {
@@ -134,15 +135,18 @@
 
     .service-features {
         padding-left: 0;
+        margin-top: 16px;
     }
 
     .process-flow {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .cta-buttons {
         flex-direction: column;
         width: 100%;
+        gap: 16px;
     }
 
     .cta-buttons .btn-primary,

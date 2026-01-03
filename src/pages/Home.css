@@ -233,19 +233,35 @@
 
     .hero-content {
         max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 @media (max-width: 767px) {
     .hero-section {
-        min-height: 80vh;
-        padding: 100px 0 60px;
+        min-height: auto;
+        padding: 140px 0 60px;
     }
 
-    .hero-buttons,
-    .cta-buttons {
+    .hero-subtitle {
+        margin-top: 24px;
+    }
+
+    .hero-buttons {
+        margin-top: 32px;
         flex-direction: column;
         width: 100%;
+        gap: 16px;
     }
 
     .hero-buttons .btn-primary,
@@ -258,11 +274,12 @@
     .categories-grid,
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .steps-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 40px;
     }
 
     .section {
@@ -271,5 +288,13 @@
 
     .section-header {
         margin-bottom: 40px;
+    }
+
+    .challenge-grid {
+        gap: 32px;
+    }
+
+    .why-choose-grid {
+        gap: 48px;
     }
 }
