@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Search, Handshake, FileCheck, Truck } from 'lucide-react';
 import {
     Carousel,
     CarouselContent,
@@ -9,24 +9,29 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import './Home.css';
+import NetworkBackground from '@/components/ui/NetworkBackground';
 
 const Home = () => {
     const features = [
         {
             title: 'Product Sourcing',
-            description: 'Identification and evaluation of suitable options based on quality, scale, and feasibility.'
+            description: 'Identification and evaluation of suitable options based on quality, scale, and feasibility.',
+            icon: Search
         },
         {
             title: 'Supplier Coordination',
-            description: 'Clear communication, confirmations, and alignment — without back-and-forth.'
+            description: 'Clear communication, confirmations, and alignment — without back-and-forth.',
+            icon: Handshake
         },
         {
             title: 'Quality & Documentation Support',
-            description: 'Specification checks, documentation review, and readiness confirmation.'
+            description: 'Specification checks, documentation review, and readiness confirmation.',
+            icon: FileCheck
         },
         {
             title: 'Process & Dispatch Coordination',
-            description: 'Timeline monitoring and structured handling until completion.'
+            description: 'Timeline monitoring and structured handling until completion.',
+            icon: Truck
         }
     ];
 
@@ -108,21 +113,24 @@ const Home = () => {
             <section className="section space-top-120 space-bottom-120">
                 <div className="container">
                     <div className="challenge-grid">
-                        <div className="challenge-content">
-                            <h2 className="heading-2">THE CHALLENGE WE SOLVE — AND HOW WE DO IT</h2>
+                        <div className="challenge-image-wrapper">
+                            <img src="/challenge_illustration.png" alt="Supply Chain Complexity" className="challenge-image" />
                         </div>
-                        <div className="challenge-description">
-                            <p className="body-large">
-                                Managing suppliers, specifications, and timelines often becomes fragmented and time-consuming.
-                                Multiple touchpoints, unclear communication, and inconsistent updates slow businesses down and create unnecessary effort.
-                            </p>
-                            <p className="body-large">
-                                Aerion Excellence brings structure, clarity, and professional coordination — acting as a single point of support
-                                between your requirement and execution. The result: minimal effort from your side and reliable outcomes.
-                            </p>
-                            <p className="body-medium" style={{ color: 'var(--brand-primary)', marginTop: '20px' }}>
-                                No complexity. No unnecessary follow-ups. Just smooth execution.
-                            </p>
+                        <div className="challenge-content-wrapper">
+                            <h2 className="heading-2">THE CHALLENGE WE SOLVE — AND HOW WE DO IT</h2>
+                            <div className="challenge-description">
+                                <p className="body-large">
+                                    Managing suppliers, specifications, and timelines often becomes fragmented and time-consuming.
+                                    Multiple touchpoints, unclear communication, and inconsistent updates slow businesses down and create unnecessary effort.
+                                </p>
+                                <p className="body-large">
+                                    Aerion Excellence brings structure, clarity, and professional coordination — acting as a single point of support
+                                    between your requirement and execution. The result: minimal effort from your side and reliable outcomes.
+                                </p>
+                                <p className="body-medium" style={{ color: 'var(--brand-primary)', marginTop: '20px' }}>
+                                    No complexity. No unnecessary follow-ups. Just smooth execution.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,6 +146,9 @@ const Home = () => {
                     <div className="features-grid">
                         {features.map((feature, index) => (
                             <div key={index} className="feature-card">
+                                <div className="feature-icon-wrapper">
+                                    <feature.icon size={32} color="var(--brand-primary)" />
+                                </div>
                                 <h3 className="heading-4">{feature.title}</h3>
                                 <p className="body-medium">{feature.description}</p>
                             </div>
@@ -216,14 +227,17 @@ const Home = () => {
                             <p className="body-medium" style={{ marginTop: '16px', color: 'var(--text-secondary)' }}>
                                 Because sourcing support should feel professional — not stressful.
                             </p>
+                            <div className="benefits-list" style={{ marginTop: '32px' }}>
+                                {benefits.map((benefit, index) => (
+                                    <div key={index} className="benefit-item">
+                                        <CheckCircle2 size={24} color="var(--brand-primary)" />
+                                        <span className="body-medium">{benefit}</span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        <div className="benefits-list">
-                            {benefits.map((benefit, index) => (
-                                <div key={index} className="benefit-item">
-                                    <CheckCircle2 size={24} color="var(--brand-primary)" />
-                                    <span className="body-medium">{benefit}</span>
-                                </div>
-                            ))}
+                        <div className="why-choose-image-wrapper">
+                            <img src="/why_choose_us.png" alt="Professional Partnership" className="why-choose-image" />
                         </div>
                     </div>
                     <p className="body-large" style={{ marginTop: '60px', textAlign: 'center' }}>
@@ -233,8 +247,9 @@ const Home = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="cta-section space-top-120 space-bottom-120">
-                <div className="container">
+            <section className="cta-section space-top-120 space-bottom-120" style={{ position: 'relative', overflow: 'hidden' }}>
+                <NetworkBackground />
+                <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                     <div className="cta-content">
                         <h2 className="heading-1">READY TO SIMPLIFY YOUR PROCESS?</h2>
                         <p className="body-large" style={{ marginTop: '24px' }}>Tell us what you need — we'll take it from there.</p>

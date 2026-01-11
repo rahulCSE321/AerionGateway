@@ -3,7 +3,7 @@ import { Mail, Phone, Clock } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 import { Toaster } from '../components/ui/sonner';
 import { toast } from 'sonner';
-import { submitContactForm } from '../utils/mockData';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -32,8 +32,23 @@ const Contact = () => {
         setIsSubmitting(true);
 
         try {
-            // Mock API call
-            const result = await submitContactForm(formData);
+            // Send email using EmailJS
+            const templateParams = {
+                name: formData.name,
+                companyName: formData.companyName,
+                email: formData.email,
+                phone: formData.phone,
+                productRequirement: formData.productRequirement,
+                quantity: formData.quantity,
+                additionalNotes: formData.additionalNotes || 'N/A'
+            };
+
+            await emailjs.send(
+                'service_0w8mbi4',
+                'template_wu1raqe',
+                templateParams,
+                'B_-R6xBpJj6b-WiEb' // Replace with your EmailJS public key
+            );
 
             toast.success('Message sent successfully!', {
                 description: 'We\'ll get back to you within 24 hours.',
@@ -51,6 +66,7 @@ const Contact = () => {
                 additionalNotes: ''
             });
         } catch (error) {
+            console.error('EmailJS Error:', error);
             toast.error('Failed to send message', {
                 description: 'Please try again later.',
                 duration: 4000
@@ -92,8 +108,8 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="caption">Email</p>
-                                        <a href="mailto:info@aerionexcellence.com" className="body-medium">
-                                            info@aerionexcellence.com
+                                        <a href="mailto:contact@aeriongateway.com" className="body-medium">
+                                            contact@aeriongateway.com
                                         </a>
                                     </div>
                                 </div>
@@ -108,7 +124,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="contact-detail-item">
+                                {/* <div className="contact-detail-item">
                                     <div className="detail-icon">
                                         <Clock size={24} />
                                     </div>
@@ -117,7 +133,7 @@ const Contact = () => {
                                         <p className="body-medium">Monday – Saturday</p>
                                         <p className="body-small">10:00 AM – 7:00 PM</p>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 

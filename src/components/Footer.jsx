@@ -31,9 +31,9 @@ const Footer = () => {
 
                             <div className="footer-column">
                                 <h4 className="footer-title">Contact</h4>
-                                <a href="mailto:info@aerionexcellence.com" className="footer-link">info@aerionexcellence.com</a>
-                                <p className="footer-link">+91 XXXXX XXXXX</p>
-                                <p className="footer-link caption">Mon–Sat | 10 AM – 7 PM</p>
+                                <a href="mailto:contact@aeriongateway.com" className="footer-link">contact@aeriongateway.com</a>
+                                {/* <p className="footer-link">+91 XXXXX XXXXX</p> */}
+                                {/* <p className="footer-link caption">Mon–Sat | 10 AM – 7 PM</p> */}
                             </div>
 
                             <div className="footer-column">

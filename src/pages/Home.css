@@ -76,11 +76,33 @@
 }
 
 /* Challenge Section */
+/* Challenge Section */
 .challenge-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 60px;
-    align-items: start;
+    align-items: center;
+}
+
+.challenge-image-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.challenge-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.challenge-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .challenge-description {
@@ -106,6 +128,18 @@
 .feature-card:hover {
     border-color: var(--brand-primary);
     transform: translateY(-4px);
+}
+
+.feature-icon-wrapper {
+    margin-bottom: 24px;
+    padding: 16px;
+    background: var(--bg-card);
+    border-radius: 50%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-light);
 }
 
 .feature-card h3 {
@@ -202,11 +236,35 @@
     transform: translateX(8px);
 }
 
+.why-choose-image-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.why-choose-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* CTA Section */
 .cta-section {
-    background: var(--bg-card);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: none;
+    border-bottom: none;
+    color: white;
+}
+
+.cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
 }
 
 .cta-content {
