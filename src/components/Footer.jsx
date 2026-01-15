@@ -42,7 +42,7 @@ const Footer = () => {
                                     <a href="#" className="social-link" aria-label="LinkedIn">
                                         <Linkedin size={20} />
                                     </a>
-                                    <a href="#" className="social-link" aria-label="Instagram">
+                                    <a href="https://www.instagram.com/aeriongateway?igsh=bDg0YXRmbWlpb2Mx&utm_source=qr" className="social-link" aria-label="Instagram">
                                         <Instagram size={20} />
                                     </a>
                                     <a href="#" className="social-link" aria-label="WhatsApp">
