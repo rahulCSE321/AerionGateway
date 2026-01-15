@@ -38,7 +38,8 @@ const Home = () => {
     const categories = [
         {
             title: 'Glass, Plastic & Household Utilities',
-            image: 'https://images.unsplash.com/photo-1541698321721-c083f55816da?w=800&q=80'
+            // image: 'https://images.unsplash.com/photo-1541698321721-c083f55816da?w=800&q=80'
+            image: '/glass.avif'
         },
         {
             title: 'Textile & Carpets',
@@ -92,7 +93,10 @@ const Home = () => {
                 </div>
                 <div className="container">
                     <div className="hero-content">
-                        <h1 className="brand-display">AERION GATEWAY. WORK SMARTER. EFFORT LESS.</h1>
+                        <h1 className="brand-display">
+                            <span style={{ display: 'block' }}>AERION GATEWAY.</span>
+                            WORK SMARTER. EFFORT LESS.
+                        </h1>
                         <p className="body-large hero-subtitle">
                             Reliable sourcing and coordination support designed to simplify complex supply requirements.
                             We help businesses connect with the right products, manage processes efficiently, and move forward with confidence.

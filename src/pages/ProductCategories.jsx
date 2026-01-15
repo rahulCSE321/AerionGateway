@@ -42,7 +42,7 @@ const ProductCategories = () => {
             title: 'Glass, Plastic & Household Utilities',
             subtitle: 'Built for regular use and consistency.',
             description: 'Utility-driven products require durability, consistency, and proper handling. We support structured sourcing and coordination for dependable everyday solutions.',
-            image: 'https://images.unsplash.com/photo-1541698321721-c083f55816da?w=800&q=80',
+            image: '/glass.avif',
             items: [
                 'Glass utility items',
                 'Plastic containers',
