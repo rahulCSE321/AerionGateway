@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { categories } from '../utils/products';
 import './Header.css';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const location = useLocation();
 
     const navLinks = [
@@ -17,6 +19,15 @@ const Header = () => {
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+        if (isMenuOpen) {
+            setIsDropdownOpen(false);
+        }
+    };
+
+    const toggleDropdown = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDropdownOpen(!isDropdownOpen);
     };
 
     return (
@@ -29,16 +40,46 @@ const Header = () => {
                     </Link>
 
                     <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.path}
-                                to={link.path}
-                                className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
+                        {navLinks.map((link) => {
+                            if (link.label === 'Products') {
+                                return (
+                                    <div key={link.path} className={`nav-item-dropdown ${isDropdownOpen ? 'dropdown-open' : ''}`}>
+                                        <span
+                                            className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
+                                            onClick={toggleDropdown}
+                                            style={{ cursor: 'pointer' }}
+                                        >
+                                            {link.label} <ChevronDown size={14} className="dropdown-icon" />
+                                        </span>
+                                        <div className="dropdown-menu">
+                                            {categories.map((category, index) => (
+                                                <Link
+                                                    key={index}
+                                                    to={`/products?category=${encodeURIComponent(category.title)}`}
+                                                    className="dropdown-link"
+                                                    onClick={() => {
+                                                        setIsMenuOpen(false);
+                                                        setIsDropdownOpen(false);
+                                                    }}
+                                                >
+                                                    {category.title}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                );
+                            }
+                            return (
+                                <Link
+                                    key={link.path}
+                                    to={link.path}
+                                    className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {link.label}
+                                </Link>
+                            );
+                        })}
                     </nav>
 
                     <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
