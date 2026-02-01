@@ -153,6 +153,7 @@
     z-index: 1001;
 }
 
+.nav-item-dropdown:hover .dropdown-menu,
 .nav-item-dropdown.dropdown-open .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -194,6 +195,7 @@
     vertical-align: middle;
 }
 
+.nav-item-dropdown:hover .dropdown-icon,
 .nav-item-dropdown.dropdown-open .dropdown-icon {
     transform: rotate(180deg);
 }
